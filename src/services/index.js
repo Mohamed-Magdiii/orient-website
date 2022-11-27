@@ -8,6 +8,7 @@ const requestService = require('./request.service');
 const transactionService = require('./transaction.service');
 const productsService = require('./products.service');
 const SubProductsService = require('./subProducts.service');
+const TeamsService = require('./teams.service');
 
 module.exports = {
   userService,
@@ -20,5 +21,6 @@ module.exports = {
   requestService,
   transactionService,
   productsService,
-  SubProductsService
+  SubProductsService,
+  TeamsService
 };

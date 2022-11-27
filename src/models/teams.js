@@ -1,29 +1,26 @@
 const {model, Schema} = require("mongoose");
 const mongoosePaginate = require("mongoose-paginate-v2")
 const {CONSTANTS} = require("../common")
-const ProductSchema = Schema({
+const teamSchema = Schema({
   recordId: { type: String },
-  title: {
+  name: {
     en: { type: String,required:true },
     ar: { type: String ,required:true},
   },
-  description: {
+  title: {
     en: { type: String , required:true},
     ar: { type: String },
   },
-  image: { type: String },
-  type: {
-    type: String,
-    enum: Object.keys(CONSTANTS.PRODUCTS_TYPE),
-  },
+  image: {type:String},
+  isTopRated:{type:Boolean},
 },
 { timestamps: true },
 );
-ProductSchema.plugin(mongoosePaginate);
-ProductSchema.index({
+teamSchema.plugin(mongoosePaginate);
+teamSchema.index({
   title: 1,
   key: 1,
   createdAt: 1,
 });
-module.exports.Model = model('products', ProductSchema);
-module.exports.Schema = ProductSchema;
+module.exports.Model = model('teams', teamSchema);
+module.exports.Schema = teamSchema;

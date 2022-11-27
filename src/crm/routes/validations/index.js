@@ -10,6 +10,7 @@ const requestValidations = require('./request');
 const transactionValidations = require('./transaction');
 const productsValidations = require('./products');
 const subProductsValidations = require('./subProducts');
+const teamsValidations = require('./teams');
 
 module.exports = {
   authValidations,
@@ -21,4 +22,5 @@ module.exports = {
   transactionValidations,
   productsValidations,
   subProductsValidations,
+  teamsValidations
 };

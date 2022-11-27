@@ -10,6 +10,7 @@ const TransactionModel = require('./transaction');
 const Dictionary = require('./dictionary');
 const ProductsModel = require('./products');
 const subProductsModel = require('./subProducts');
+const teamsModel = require('./teams');
 
 module.exports = {
   UserModel,
@@ -21,5 +22,6 @@ module.exports = {
   TransactionModel,
   Dictionary,
   ProductsModel,
-  subProductsModel
+  subProductsModel,
+  teamsModel
 };
