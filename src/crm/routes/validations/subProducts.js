@@ -10,5 +10,6 @@ module.exports.create = Joi.object({
   description: {
     en: Joi.string().required(),
     ar: Joi.string().required(),
-  }
+  },
+  product: Joi.string().required()
 });

@@ -24,13 +24,10 @@ module.exports.authMiddleware = (req, res, next) => {
 
 module.exports.validationMiddleware = (validationObject, isGet = false) => (req, res, next) => {
   req.apiParams = parseJoiObject(validationObject);
-  const body = isGet ? req.query : req.body;
-  const { error } = validationObject.validate(body);
+  const body = isGet ? req.query || {} : req.body || {};
+  const { error } = validationObject ? validationObject.validate(body) : '';
   if (error) {
-    return next(new CustomError({
-      ...ResponseMessages.JOI_VALIDATION_ERROR,
-         message: error.message, 
-    }));
+    return next(new CustomError(ResponseMessages.JOI_VALIDATION_ERROR));
   }
   return next();
 };
@@ -38,12 +35,9 @@ module.exports.validationMiddleware = (validationObject, isGet = false) => (req,
 module.exports.validationPathMiddleware = (validationObject) => (req, res, next) => {
   req.pathParams = parseJoiObject(validationObject);
   const body = req.params;
-  console.log(req);
   const { error } = validationObject.validate(body);
   if (error) {
-    return next(new CustomError({
-      ...ResponseMessages.JOI_VALIDATION_ERROR,
-      message: error.message,
-    }));
+    return next(new CustomError(ResponseMessages.JOI_VALIDATION_ERROR));
   }
+  return next();
 };

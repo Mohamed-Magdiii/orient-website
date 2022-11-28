@@ -9,6 +9,7 @@ const LeadController = require('./customer/lead.controller');
 const RequestController = require('./request.controller');
 const ProductsController = require('./products.controller');
 const subProductsController = require('./subProducts.controller');
+const TeamsController = require('./teams.controller');
 module.exports = {
   RoleController,
   UserController,
@@ -22,5 +23,6 @@ module.exports = {
 
   RequestController,
   ProductsController,
-  subProductsController
+  subProductsController,
+  TeamsController
 };

@@ -9,6 +9,7 @@ const subProductsSchema = Schema({
     en: { type: String},
     ar: { type: String },
   },
+  product : {type:Schema.Types.ObjectId, ref:"products" },
 
   image: { type: String },
 });
