@@ -3,7 +3,6 @@ const roleService = require('./role.service');
 
 const activityService = require('./activity.service');
 const bankAccountService = require('./bank-account.service');
-const customerService = require('./customer.service');
 const requestService = require('./request.service');
 const transactionService = require('./transaction.service');
 const productsService = require('./products.service');
@@ -17,7 +16,6 @@ module.exports = {
   // customer services
   activityService,
   bankAccountService,
-  customerService,
   requestService,
   transactionService,
   productsService,
